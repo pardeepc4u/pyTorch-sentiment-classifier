@@ -1,0 +1,58 @@
+name: FullStack MCP Bundle
+version: 0.0.1
+schema: v1
+mcpServers:
+  # Local filesystem for code editing
+  - name: filesystem
+    type: stdio
+    command: npx
+    args:
+      - -y
+      - "@modelcontextprotocol/server-filesystem"
+      - "/Users/kiyaanyadav/workspace/github_workspace/pyTorch-sentiment-classifier"
+
+  # GitHub for repo browsing, issues, PRs
+  # - name: github
+  #   type: sse
+  #   url: https://api.mcp.sh/servers/github/v1/sse
+  #   config:
+  #     - name: GITHUB_TOKEN
+  #       value: "${env:GITHUB_TOKEN}"
+
+  # Browser automation with Playwright
+  # - name: playwright
+  #   type: stdio
+  #   command: npx
+  #   args:
+  #     - -y
+  #     - "@playwright/mcp@latest"
+
+  # PostgreSQL for backend + DB work
+  # - name: postgresql
+  #   type: stdio
+  #   command: npx
+  #   args:
+  #     - -y
+  #     - "@modelcontextprotocol/server-postgresql"
+
+  # Supabase (if you use it for auth / DB)
+  # - name: supabase
+  #   type: http
+  #   url: https://api.mcp.sh/servers/supabase/v1
+
+  # Vercel if you prefer it over Supabase
+  # - name: vercel
+  #   type: http
+  #   url: https://api.mcp.sh/servers/vercel/v1
+
+  # Documentation / library context
+  - name: context7
+    type: http
+    url: https://api.mcp.sh/servers/context7/v1
+
+  # Sequential thinking for better agent planning
+  - name: sequential_thinking
+    type: http
+    url: https://api.mcp.sh/servers/sequential_thinking/v1
+
+
